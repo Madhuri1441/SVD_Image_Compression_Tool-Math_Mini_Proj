@@ -69,17 +69,17 @@ SVD_IMAGE_COMPRESSION_TOOL/
 ```
 
 
-Installation (Dependencies)
+## Installation (Dependencies)
 
 Install required libraries using pip:
 ```bash
     pip install numpy opencv-python matplotlib streamlit
 ```
 
-How to Run:
+# How to Run:
 
 
-1. Run Core Logic (Command Line)
+## Run Core Logic (Command Line)
 
 This runs the full compression pipeline:
 
@@ -91,7 +91,7 @@ This runs the full compression pipeline:
 - Displays comparison and graphs
 
 
-2. Run Streamlit Web App
+## Run Streamlit Web App
 
 Launch the interactive UI:
 
@@ -104,7 +104,7 @@ Launch the interactive UI:
 
 
 
-How It Works:
+## How It Works:
     - Load image as a matrix
     - Convert to grayscale (optional)
     - Apply SVD:
@@ -127,7 +127,7 @@ How It Works:
         ‖A - A_k‖
     - Lower error = better image quality
 
-## Output:
+# Output:
 
 ## Compressed images are saved in:
     outputs/
