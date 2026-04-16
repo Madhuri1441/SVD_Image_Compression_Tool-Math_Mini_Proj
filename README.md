@@ -66,12 +66,15 @@ SVD_IMAGE_COMPRESSION_TOOL/
 │
 ├── .gitignore
 └── README.md
+'''
+
+
 Installation (Dependencies)
 
 Install required libraries using pip:
-
+'''bash
     pip install numpy opencv-python matplotlib streamlit
-
+'''
 
 How to Run:
 
