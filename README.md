@@ -129,14 +129,14 @@ Measured using matrix norm:
     ‖A - A_k‖
       Lower error = better image quality
 
-Output:
+## Output:
 
-Compressed images are saved in:
+## Compressed images are saved in:
     outputs/
     output/compressed/
     output/plots/
 
-Limitations
+## Limitations
     SVD is computationally expensive for large images
     Very small k reduces image quality significantly
     Not optimized for real-world formats like JPEG/PNG
@@ -147,8 +147,7 @@ Limitations
     Add PSNR / SSIM metrics
     Auto-save plots
 
-Team Contribution
-    ## Team Contribution
+## Team Contribution
 
 - **Manasvi (Person 1)**  
   - Implemented core SVD logic in `compress.py`  
