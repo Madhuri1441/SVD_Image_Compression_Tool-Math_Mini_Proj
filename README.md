@@ -30,3 +30,35 @@ By retaining only the top k singular values, the image can be approximated with 
 ---
 
 ## Project Structure
+
+```bash
+SVD_IMAGE_COMPRESSION_TOOL/
+│
+├── app/
+│   └── app.py                  # Streamlit web application
+│
+├── data/
+│   ├── image1.jpg              # Sample input image 1
+│   └── image2.jpg              # Sample input image 2
+│
+├── output/
+│   ├── compressed/             # Additional compressed image outputs
+│   └── plots/                  # Saved plots/graphs
+│
+├── outputs/
+│   ├── grayscale_compressed.jpg
+│   ├── image1_gray.jpg
+│   ├── image1_rgb.jpg
+│   ├── image2_gray.jpg
+│   ├── image2_rgb.jpg
+│   └── rgb_compressed.jpg      # Generated compressed image files
+│
+├── src/
+│   ├── __pycache__/            # Python cache files
+│   ├── compress.py             # Core SVD compression logic
+│   ├── main.py                 # Main execution script
+│   ├── utils.py                # Helper utility functions
+│   └── visualize.py            # Plotting and visualization functions
+│
+├── .gitignore
+└── README.md
