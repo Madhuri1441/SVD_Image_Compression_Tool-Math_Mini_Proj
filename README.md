@@ -1,6 +1,10 @@
 # SVD Image Compression Tool
 
-This project implements an image compression system using Singular Value Decomposition (SVD). It demonstrates how linear algebra techniques can be applied to reduce image size while preserving essential visual information. The project includes both a command-line pipeline and an interactive web interface built with Streamlit.
+This project implements an image compression system using **Singular Value Decomposition (SVD)**. It demonstrates how linear algebra techniques can be applied to reduce image size while preserving essential visual information.
+
+The project includes both:
+- a **command-line pipeline** (for core logic)
+- an **interactive web interface** using Streamlit
 
 ---
 
@@ -10,15 +14,15 @@ Singular Value Decomposition factorizes an image matrix into three components:
 
 A = U Σ Vᵀ
 
-By retaining only the top k singular values, the image can be approximated with significantly fewer parameters. This results in compression with a controllable trade-off between image quality and storage size.
+By retaining only the top **k singular values**, the image can be approximated using fewer parameters. This results in compression with a controllable trade-off between **image quality** and **storage size**.
 
 ---
 
 ## Features
 
 - Image compression using Singular Value Decomposition
-- Adjustable compression level using k-value
-- Support for both grayscale and RGB image compression
+- Adjustable compression level using **k-value**
+- Support for both **grayscale** and **RGB image compression**
 - Reconstruction error calculation
 - Compression ratio estimation
 - Visualization of original vs compressed images
@@ -62,3 +66,98 @@ SVD_IMAGE_COMPRESSION_TOOL/
 │
 ├── .gitignore
 └── README.md
+Installation (Dependencies)
+
+Install required libraries using pip:
+
+    pip install numpy opencv-python matplotlib streamlit
+
+
+How to Run:
+
+
+1. Run Core Logic (Command Line)
+
+This runs the full compression pipeline:
+
+    python src/main.py
+
+✔ Loads images from data/
+✔ Compresses using SVD
+✔ Saves outputs in outputs/
+✔ Displays comparison and graphs
+
+
+2. Run Streamlit Web App
+
+Launch the interactive UI:
+
+    streamlit run app/app.py
+
+✔ Upload your own image or select sample images
+✔ Adjust k-value using slider
+✔ View original vs compressed image
+✔ See compression ratio and error in real-time
+
+
+
+How It Works:
+    Load image as a matrix
+    Convert to grayscale (optional)
+    Apply SVD:
+    A = U Σ Vᵀ
+    Keep only top k singular values
+    Reconstruct compressed image
+    Compute:
+    Reconstruction error
+    Compression ratio
+    Display and save results
+    RGB Compression
+    Split image into R, G, B channels
+    Apply SVD separately to each channel
+    Recombine channels into final compressed image
+    Compression Ratio
+
+For a grayscale image of size m × n:
+    Compression Ratio = (m × n) / [k × (m + n + 1)]
+    Higher ratio = better compression
+    Reconstruction Error
+Measured using matrix norm:
+    ‖A - A_k‖
+      Lower error = better image quality
+
+Output:
+
+Compressed images are saved in:
+    outputs/
+    output/compressed/
+    output/plots/
+
+Limitations
+    SVD is computationally expensive for large images
+    Very small k reduces image quality significantly
+    Not optimized for real-world formats like JPEG/PNG
+    Future Improvements
+    Multiple image upload support
+    Improved RGB error calculation
+    Performance optimization
+    Add PSNR / SSIM metrics
+    Auto-save plots
+
+Team Contribution
+    ## Team Contribution
+
+- **Manasvi (Person 1)**  
+  - Implemented core SVD logic in `compress.py`  
+  - Developed grayscale and RGB image compression  
+  - Implemented compression ratio calculations  
+
+- **Neha (Person 2)**  
+  - Built helper functions in `utils.py`  
+  - Implemented visualization features in `visualize.py`  
+  - Created comparison plots and error vs k graphs  
+
+- **Madhuri (Person 3)**  
+  - Integrated full pipeline in `main.py`  
+  - Developed Streamlit UI in `app/app.py`  
+  - Connected all modules and handled user interaction
