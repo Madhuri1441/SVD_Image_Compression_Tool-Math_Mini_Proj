@@ -85,10 +85,10 @@ This runs the full compression pipeline:
 
     python src/main.py
 
-✔ Loads images from data/
-✔ Compresses using SVD
-✔ Saves outputs in outputs/
-✔ Displays comparison and graphs
+- Loads images from data/
+- Compresses using SVD
+- Saves outputs in outputs/
+- Displays comparison and graphs
 
 
 2. Run Streamlit Web App
@@ -97,37 +97,35 @@ Launch the interactive UI:
 
     streamlit run app/app.py
 
-✔ Upload your own image or select sample images
-✔ Adjust k-value using slider
-✔ View original vs compressed image
-✔ See compression ratio and error in real-time
+- Upload your own image or select sample images
+- Adjust k-value using slider
+- View original vs compressed image
+- See compression ratio and error in real-time
 
 
 
 How It Works:
-    Load image as a matrix
-    Convert to grayscale (optional)
-    Apply SVD:
-    A = U Σ Vᵀ
-    Keep only top k singular values
-    Reconstruct compressed image
-    Compute:
-    Reconstruction error
-    Compression ratio
-    Display and save results
-    RGB Compression
-    Split image into R, G, B channels
-    Apply SVD separately to each channel
-    Recombine channels into final compressed image
-    Compression Ratio
-
-For a grayscale image of size m × n:
-    Compression Ratio = (m × n) / [k × (m + n + 1)]
-    Higher ratio = better compression
-    Reconstruction Error
-Measured using matrix norm:
-    ‖A - A_k‖
-      Lower error = better image quality
+    - Load image as a matrix
+    - Convert to grayscale (optional)
+    - Apply SVD:
+        A = U Σ Vᵀ
+        Keep only top k singular values
+        Reconstruct compressed image
+    - Compute:
+        Reconstruction error
+        Compression ratio
+        Display and save results
+        RGB Compression
+        Split image into R, G, B channels
+        Apply SVD separately to each channel
+        Recombine channels into final compressed image
+        Compression Ratio
+    - For a grayscale image of size m × n:
+        Compression Ratio = (m × n) / [k × (m + n + 1)]
+    - Higher ratio = better compression
+    - Measured using matrix norm:
+        ‖A - A_k‖
+    - Lower error = better image quality
 
 ## Output:
 
